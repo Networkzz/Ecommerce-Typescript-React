@@ -6,7 +6,7 @@ class Server {
   private app: express.Application;
   private port: string;
   private apiPaths = {
-    users: '/api/users'
+    users: 'api/users'
   }
 
   constructor() {
