@@ -1,6 +1,7 @@
 import express, { Application } from "express";
 import userRoutes from '../routes/user'
 import cors from "cors";
+import db from "../db/connection";
 //Defining Server -> importing app from Express and creating a port as a String where port is 8000 in .env
 class Server {
 
@@ -14,10 +15,22 @@ class Server {
     this.app = express();
     this.port = process.env.PORT || '8000'; //If port is null, port 8000 by default
     //Inital methods
+    this.dbConnection();
     //Defining middlewares
     this.middlewares();
     //Defining routes
     this.routes();
+  }
+
+  async dbConnection() {
+    try {
+      
+        await db.authenticate();
+        console.log('Database online')
+
+    } catch (error) {
+        console.log(error);
+    }
   }
 
   middlewares(){
