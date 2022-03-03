@@ -1,4 +1,4 @@
-import e, { Request, Response } from "express";
+import { Request, Response } from "express";
 import User from "../models/user";
 
 /*Obtain multiple user
@@ -25,7 +25,7 @@ export const getUser = async( req: Request, res: Response ) => {
     });
   }
   
-  res.json({user})
+  res.json(user)
 }
 //Create user
 export const postUser = ( req: Request, res: Response ) => {
