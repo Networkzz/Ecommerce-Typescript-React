@@ -1,20 +1,31 @@
-import { Request, Response } from "express";
+import e, { Request, Response } from "express";
+import User from "../models/user";
 
-//Obtain multiple user
-export const getUsers = ( req: Request, res: Response ) => {
-  res.json({
-    msg: 'getUsers'
-  })
+/*Obtain multiple user
+async function to query all users since method findall() return a promise so async function is needed*/
+export const getUsers = async( req: Request, res: Response ) => {
+
+  const users = await User.findAll(); //query all
+
+  res.json({users});
 }
 //Obtain user
-export const getUser = ( req: Request, res: Response ) => {
+export const getUser = async( req: Request, res: Response ) => {
 
   const { id } = req.params;
+
+  const user = await User.findByPk( id ); //query only id (Primary key)
+
+  //if user is not found return a msg error
+  if (user) {
+    res.json(user);
+  } else {
+    res.status(404).json({
+      msg: `User with id ${id} not found`
+    });
+  }
   
-  res.json({
-    msg: 'getUser',
-    id
-  })
+  res.json({user})
 }
 //Create user
 export const postUser = ( req: Request, res: Response ) => {

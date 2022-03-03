@@ -21,7 +21,7 @@ class Server {
     //Defining routes
     this.routes();
   }
-
+//Conection to database
   async dbConnection() {
     try {
       
