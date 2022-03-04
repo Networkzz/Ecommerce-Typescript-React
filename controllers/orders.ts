@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import Order from "../models/order";
+import User from "../models/user";
 
 /*Obtain multiple order
 async function to query all orders since method findall() return a promise so async function is needed*/
@@ -29,14 +30,10 @@ export const getOrder = async( req: Request, res: Response ) => {
   res.json(order)
 }
 //Create order
-export const postOrder = ( req: Request, res: Response ) => {
+export const postOrder = async( req: Request, res: Response ) => {
 
   const { body } = req;
 
-  res.json({
-    msg: 'postorder',
-    body
-  })
 }
 //Update order
 export const putOrder = ( req: Request, res: Response ) => {

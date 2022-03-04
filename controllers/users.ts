@@ -28,33 +28,88 @@ export const getUser = async( req: Request, res: Response ) => {
   res.json(user)
 }
 //Create user
-export const postUser = ( req: Request, res: Response ) => {
+//full_name + email + password + country ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN ORDER TO ADD A NEW USER
+export const postUser = async( req: Request, res: Response ) => {
 
-  const { body } = req;
+const { body } = req;
 
-  res.json({
-    msg: 'postUser',
-    body
-  })
+  try {
+//If email already exist since email is a unique row in the db
+    const existEmail = await User.findOne({
+      where: {
+        email: body.email
+      }
+    });
+//return msg to the user that this email already exists.
+    if(existEmail) {
+      return res.status(400).json({
+        msg: `User with email ${body.email} already exists`
+      })
+    }
+//Create user and insert body from the json request
+    const user = User.build(body);
+    await user.save();
+
+    res.json( user );
+
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({
+      msg: 'Talk to the administrator'
+    }) 
+  }
 }
 //Update user
-export const putUser = ( req: Request, res: Response ) => {
+export const putUser = async( req: Request, res: Response ) => {
 
   const { id } = req.params;
   const { body } = req;
 
-  res.json({
-    msg: 'postUser',
-    body
-  })
+  try {
+    
+    const user  = await User.findByPk(id);
+    if(!user) {
+      return res.status(404).json({
+        msg: `User with id ${id} doesn't exist`
+      })
+    }
+//If email already exist since email is a unique row in the db
+    const existEmail = await User.findOne({
+      where: {
+        email: body.email
+      }
+    });
+//return msg to the user that this email already exists.
+    if(existEmail) {
+      return res.status(400).json({
+        msg: `User with email ${body.email} already exists`
+      })
+    }
+//Update and return user updated
+    await user.update( body );
+    
+    res.json( user );
+    
+      } catch (error) {
+        console.log(error)
+        res.status(500).json({
+          msg: 'Talk to the administrator'
+        }) 
+      }
 }
 //Delete user
-export const deleteUser = ( req: Request, res: Response ) => {
+export const deleteUser = async( req: Request, res: Response ) => {
 
   const { id } = req.params;
 
-  res.json({
-    msg: 'deleteUser',
-    id
-  })
+  const user  = await User.findByPk(id);
+    if(!user) {
+      return res.status(404).json({
+        msg: `User with id ${id} doesn't exist`
+      })
+    }
+//Physical delete from database -> delete entire row from database
+  await user.destroy()
+
+  res.json(user)
 }
