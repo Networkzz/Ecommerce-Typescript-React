@@ -1,5 +1,6 @@
 import express, { Application } from "express";
 import userRoutes from '../routes/user'
+import orderRoutes from '../routes/order'
 import cors from "cors";
 import db from "../db/connection";
 //Defining Server -> importing app from Express and creating a port as a String where port is 8000 in .env
@@ -8,7 +9,8 @@ class Server {
   private app: express.Application;
   private port: string;
   private apiPaths = {
-    users: '/api/users'
+    users: '/api/users',
+    orders: '/api/orders'
   }
 
   constructor() {
@@ -47,6 +49,7 @@ class Server {
 
   routes(){
     this.app.use(this.apiPaths.users, userRoutes);
+    this.app.use(this.apiPaths.orders, orderRoutes);
   }
 
   listen() {
