@@ -3,10 +3,10 @@ import { deleteOrder, getOrder, getOrders, postOrder, putOrder } from "../contro
 
 const router_order = Router();
 
-router_order.get('/',    getOrders); //Get multiple users
-router_order.get('/:id', getOrder); //Get user from id 
-router_order.post('/',   postOrder); //Create user
-router_order.put('/:id', putOrder); //Update user
-router_order.delete('/', deleteOrder); //Delete user
+router_order.get('/',    getOrders); //Get multiple orders
+router_order.get('/:id', getOrder); //Get order from id 
+router_order.post('/',   postOrder); //Create order
+router_order.put('/:id', putOrder); //Update order
+router_order.delete('/:id', deleteOrder); //Delete order
 
 export default router_order;
