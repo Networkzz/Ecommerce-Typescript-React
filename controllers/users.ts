@@ -28,7 +28,7 @@ export const getUser = async( req: Request, res: Response ) => {
   res.json(user)
 }
 //Create user
-//full_name + email + password + country ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN ORDER TO ADD A NEW USER
+//full_name + shipping_adress + email + password + country ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN ORDER TO ADD A NEW USER
 export const postUser = async( req: Request, res: Response ) => {
 
 const { body } = req;
