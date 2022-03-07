@@ -13,14 +13,15 @@ class Server {
 
   private app: express.Application;
   private port: string;
+//Defining routes for each model
   private apiPaths = {
     users: '/api/users',
     orders: '/api/orders',
     order_details: '/api/order_details',
-    products: 'api/products',
-    comments: 'api/comments',
-    products_suppliers: 'api/product_suppliers',
-    suppliers: 'api/suppliers'
+    products: '/api/products',
+    comments: '/api/comments',
+    products_suppliers: '/api/product_suppliers',
+    suppliers: '/api/suppliers'
   }
 
   constructor() {
@@ -51,12 +52,12 @@ class Server {
     this.app.use( cors({
       
     }));
-    // Lectura del body
+    // reading body from json
     this.app.use(express.json());
-    //Carpeta publica
+    //public folder
     this.app.use(express.static('public'));
   }
-
+//implementing routes from apiPaths()
   routes(){
     this.app.use(this.apiPaths.users, userRoutes);
     this.app.use(this.apiPaths.orders, orderRoutes);
