@@ -29,7 +29,7 @@ export const getSupplier = async( req: Request, res: Response ) => {
   res.json(supplier)
 }
 //Create supplier
-//full_name + email + password + country ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN supplier TO ADD A NEW supplier
+//name + country ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN supplier TO ADD A NEW supplier
 export const postSupplier = async( req: Request, res: Response ) => {
 
 const { body } = req;

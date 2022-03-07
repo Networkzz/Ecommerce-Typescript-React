@@ -29,7 +29,7 @@ export const getComment = async( req: Request, res: Response ) => {
   res.json(comment)
 }
 //Create comment
-//full_name + email + password + country ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN comment TO ADD A NEW comment
+//content + product_id ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN comment TO ADD A NEW comment
 export const postComment = async( req: Request, res: Response ) => {
 
 const { body } = req;

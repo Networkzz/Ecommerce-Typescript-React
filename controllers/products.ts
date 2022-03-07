@@ -29,7 +29,7 @@ export const getProduct = async( req: Request, res: Response ) => {
   res.json(product)
 }
 //Create product
-//full_name + email + password + country ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN product TO ADD A NEW product
+//name + description + price + stock ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN product TO ADD A NEW product
 export const postProduct = async( req: Request, res: Response ) => {
 
 const { body } = req;

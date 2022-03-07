@@ -29,7 +29,7 @@ export const getOrder_detail = async( req: Request, res: Response ) => {
   res.json(order_detail)
 }
 //Create order_detail
-//full_name + email + password + country ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN order_detail TO ADD A NEW order_detail
+//price + quantity + order_id + product_id ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN order_detail TO ADD A NEW order_detail
 export const postOrder_detail = async( req: Request, res: Response ) => {
 
 const { body } = req;
