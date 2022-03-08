@@ -1,0 +1,1 @@
+{"version":3,"file":"supplier.js","sourceRoot":"","sources":["../../models/supplier.ts"],"names":[],"mappings":";;;;;AAAA,yCAAsC;AACtC,kEAAkC;AAElC,MAAM,QAAQ,GAAG,oBAAE,CAAC,MAAM,CAAC,WAAW,EAAE;IACtC,IAAI,EAAE;QACJ,IAAI,EAAE,qBAAS,CAAC,MAAM;KACvB;IACD,OAAO,EAAE;QACP,IAAI,EAAE,qBAAS,CAAC,OAAO;KACxB;CACF,CAAC,CAAA;AAEF,kBAAe,QAAQ,CAAC"}
