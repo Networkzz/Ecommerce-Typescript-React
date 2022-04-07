@@ -39,7 +39,7 @@ const getComment = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
 });
 exports.getComment = getComment;
 //Create comment
-//full_name + email + password + country ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN comment TO ADD A NEW comment
+//content + product_id ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN comment TO ADD A NEW comment
 const postComment = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {

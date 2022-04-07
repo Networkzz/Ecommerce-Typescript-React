@@ -39,7 +39,7 @@ const getOrder_detail = (req, res) => __awaiter(void 0, void 0, void 0, function
 });
 exports.getOrder_detail = getOrder_detail;
 //Create order_detail
-//full_name + email + password + country ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN order_detail TO ADD A NEW order_detail
+//price + quantity + order_id + product_id ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN order_detail TO ADD A NEW order_detail
 const postOrder_detail = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {

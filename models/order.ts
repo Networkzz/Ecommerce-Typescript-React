@@ -1,19 +1,19 @@
 import { DataTypes } from "sequelize";
 import db from "../db/connection";
 
-const Order = db.define('Order', {
+const Order = db.define("order", {
   status: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
   amount: {
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
   },
   shipping_adress: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
   user_id: {
-    type: DataTypes.STRING
-  }
-})
+    type: DataTypes.STRING,
+  },
+});
 
 export default Order;

@@ -1,13 +1,13 @@
 import { DataTypes } from "sequelize";
 import db from "../db/connection";
 
-const Supplier = db.define('Suppliers', {
+const Supplier = db.define("suppliers", {
   name: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
   country: {
-    type: DataTypes.INTEGER
-  }
-})
+    type: DataTypes.INTEGER,
+  },
+});
 
 export default Supplier;

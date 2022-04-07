@@ -1,22 +1,22 @@
 import { DataTypes } from "sequelize";
 import db from "../db/connection";
 
-const Product = db.define('Products', {
+const Product = db.define("products", {
   name: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
   description: {
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
   price: {
-    type: DataTypes.DECIMAL
+    type: DataTypes.DECIMAL,
   },
   image: {
-    type: DataTypes.BLOB
+    type: DataTypes.BLOB,
   },
   stock: {
-    type: DataTypes.INTEGER
-  }
-})
+    type: DataTypes.INTEGER,
+  },
+});
 
 export default Product;

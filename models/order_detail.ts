@@ -1,19 +1,19 @@
 import { DataTypes } from "sequelize";
 import db from "../db/connection";
 
-const Order_detail = db.define('Order_details', {
+const Order_detail = db.define("order_details", {
   price: {
-    type: DataTypes.DOUBLE
+    type: DataTypes.DOUBLE,
   },
   quantity: {
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
   },
   order_id: {
-    type: DataTypes.INTEGER
+    type: DataTypes.INTEGER,
   },
   product_id: {
-    type: DataTypes.INTEGER
-  }
-})
+    type: DataTypes.INTEGER,
+  },
+});
 
 export default Order_detail;

@@ -39,7 +39,7 @@ const getProduct_supplier = (req, res) => __awaiter(void 0, void 0, void 0, func
 });
 exports.getProduct_supplier = getProduct_supplier;
 //Create product_supplier
-//full_name + email + password + country ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN product_supplier TO ADD A NEW product_supplier
+//suppliers_id + product_id ARE NOT NULL SO YOU NEED TO SEND THAT IN POSTMAN IN product_supplier TO ADD A NEW product_supplier
 const postProduct_supplier = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { body } = req;
     try {
